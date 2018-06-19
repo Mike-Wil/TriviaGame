@@ -157,7 +157,7 @@ $(document).ready(function() {
     var ans=$('#ans');
     var qMets = quiz.metrics;
     var intervalId;
-    var time=30;
+    var time=20;
     var leftBlank;
     var currQuest;
     var logo = $('<img>');
@@ -174,31 +174,38 @@ $(document).ready(function() {
     ans.append(startBtn);
 
     function checkpoint(response) {
-        setTimeout(onward,3000);
+        setTimeout(onward,4000);
                    
         clearInterval(intervalId);
         timer.empty();
         question.empty();
         ans.empty();
         console.log(currQuest);
-        ans.append('<h1>'+response+'</h1>');
+        var anDiv = $('<div>');
+        anDiv.attr('class','backdrop');
+        anDiv.append('<h1>'+response+'</h1>');
         if (response != 'Correct!') {
-            ans.append('<h2>The correct Answer was: '+currQuest.ans0.text+'</h2>');
+            anDiv.append('<h2>The correct Answer was: '+currQuest.ans0.text+'</h2>');
         }
         if (response === 'You ran out of time!') {
             qMets.numBlank++;
         }
+        ans.append(anDiv);
+        var check = $('<img>');
+        check.attr('src','assets/images/' +quizKeys[qNum-1]+'.gif');
+        ans.append(check);
 
     }
     function onward() {
 
         if (qNum<quizKeys.length) {
             // console.log(this);
-            time=30;
+            time=20;
             timer.html('<h2>Time Remaining: '+time+' seconds</h2>');
+            timer.attr('class','backdrop');
             clearInterval(intervalId);
             intervalId = setInterval(decrement,1000);
-            leftBlank = setTimeout(checkpoint,5000,'You ran out of time!');
+            leftBlank = setTimeout(checkpoint,20000,'You ran out of time!');
             
             console.log(qMets.numCorrect);
             console.log(qMets.numWrong);
@@ -260,7 +267,7 @@ $(document).ready(function() {
             qMets.numCorrect=0;
             qMets.numWrong=0;
             qMets.numBlank=0;
-            time=30;
+            time=20;
             
             quizKeys = shuffle(quizKeys);
             onward();

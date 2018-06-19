@@ -46,3 +46,8 @@ body {
 #scoring {
     background-color:blueviolet;
 }
+.backdrop {
+    background-color: blue;
+    color: yellow;
+    font-size: 32px; 
+}
