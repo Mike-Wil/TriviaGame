@@ -1,0 +1,48 @@
+@font-face {
+    font-family: 'SpongeFont';
+    src: url('KrabbyPatty.ttf'), url('krabbypatty.woff2');
+    /* url('assets/images/KrabbyPatty.woff') format('woff'); */
+}
+html {
+    min-height:100%;
+}
+body {
+    font-family: 'SpongeFont';
+    background-image: url('../images/card2.png');
+    /* background: gray; */
+    height:100%;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    margin-bottom:0px;
+}
+#logo {
+    width:50%;
+    margin: 20px;
+}
+#startBtn {
+    /* width:50%;   */
+    font-size: 60px;
+    margin: 20px;
+}
+.btn {
+    font-family: 'SpongeFont';
+    font-size: 32px;
+    font-weight: 100;
+
+
+}
+.btn-primary {
+    min-width: 60%;
+    margin: 0px 5px 5px;
+    /* height:20%; */
+    
+}
+#currQ {
+    background-color: blue;
+    color: yellow;
+    font-size: 32px;
+}
+#scoring {
+    background-color:blueviolet;
+}
