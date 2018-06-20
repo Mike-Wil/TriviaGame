@@ -185,7 +185,7 @@ $(document).ready(function() {
         anDiv.attr('class','backdrop');
         anDiv.append('<h1>'+response+'</h1>');
         if (response != 'Correct!') {
-            anDiv.append('<h2>The correct Answer was: '+currQuest.ans0.text+'</h2>');
+            anDiv.append('<h2>The correct answer was: '+currQuest.ans0.text+'</h2>');
         }
         if (response === 'You ran out of time!') {
             qMets.numBlank++;
@@ -193,6 +193,7 @@ $(document).ready(function() {
         ans.append(anDiv);
         var check = $('<img>');
         check.attr('src','assets/images/' +quizKeys[qNum-1]+'.gif');
+        check.attr('class','checkImg');
         ans.append(check);
 
     }
